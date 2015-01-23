@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block title %}Mallampati Photobooth - The open source project that makes uncovered yawns cool!{% endblock %}
+    {% block content %}
+    {% block navbar %}
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Mallampati Photobooth</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="./">Home</a></li>
+	    <li><a href="./photobooth">Photobooth</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    {% endblock %}
+      <div class="container theme-showcase" role="main">
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h1>Welcome To The Mallampati Photobooth!</h1>
+        <p>The open source project that makes uncovered yawns cool!</p>
+      </div>
+
+<div class="text-center">
+        <h1>Are You Ready To Show Off Your Widest Yawn?</h1>
+      <p>
+      <a role="button" class="btn btn-lg btn-success" href="./photobooth">Yes, take me to the photobooth!</a>
+      </p>
+</div>
+
+
+<div class="col-xs-6">
+<div class="page-header">
+        <h1>What Is This Project About?</h1>
+      </div>
+      <div class="well">
+        <p>Mallampati photo booth is a non-commercial medical community project, consisting in harversting  data about airway evaluation before anesthesia, and processing it  through machine learning algorithms. Airway evaluation is a highly important topic in medicine, as a correct evaluation will allow caregivers to avoid life-threatening unexpected situations, where the patient cannot be ventilated when under anesthesia. Literature states a set of very precise criteria and measures for airway evaluation, and routine Mallampati scoring is part of those. By contributing to this project, you will help the community take a small step towards automated airway evaluation for a faster and precise airway evaluation before anesthesia, that will one day save lives! <a target="_blank" href="http://en.wikipedia.org/wiki/Mallampati_score">More information...</a></p>
+      </div>
+</div>
+
+<div class="col-xs-6">
+<div class="page-header">
+        <h1>How May I Contribute?</h1>
+      </div>
+      <div class="well">
+        <p>You will find below a photo booth application that takes snapshots, and stores them into a database. You can contribute by taking a snapshot of your oral cavity, that will be used to determine your Mallampati score (detailed instructions below). No personal data will be required except this picture, and the pictures will not display your full face nor any easily recognizable facial features, thus guaranteeing a completely anonymous process. If you accidentally take a unsatisfactory snapshot, you will have the opportunity to discard it immediately.</p>
+<p>Note: you may also contribute by uploading a picture from your device.</p>
+      </div>
+</div>
+
+<div class="col-xs-12">
+<div class="page-header">
+        <h1>Are You Going To Sell My Data?</h1>
+      </div>
+      <div class="well">
+        <p>No, this project is totally free, non-commercial, and not-for-profit. We will never make use of your data out of this project, and will never give access to it to another organization. Your data will serve only medical research purposes.</p>
+      </div>
+</div>
+
+</div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/docs.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    {% endblock %}
