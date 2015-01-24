@@ -15,7 +15,8 @@
 	<script src="../static/custom.js"></script>	
 
 	<div class="col-xs-6">
-		<div style="padding-top: 5%;">
+	{% if is_mobile == False %}
+		<div>
 			<div class="panel panel-default">
         			<div class="panel-heading">
               				<h3 class="panel-title">Take a picture using our photobooth...</h3>
@@ -28,9 +29,14 @@
 				</div>
 			</div>
 		</div>
+	{% endif %}
 		<div class="panel panel-default">
         		<div class="panel-heading">
-              			<h3 class="panel-title">Or, if you prefer, upload an image file:</h3>
+				{% if is_mobile == True %}
+              				<h3 class="panel-title">Please click the button to enter the photobooth</h3>
+				{% else %}
+              				<h3 class="panel-title">Or, if you prefer, upload an image file:</h3>
+				{% endif %}
             		</div>
             		<div class="panel-body">
               			<form>
@@ -50,15 +56,17 @@
 
       	<div class="col-xs-6">
       		<div class="lead">
-			<h1 class="text-capitalize">how to take a useful picture:</h1>
-			<div>
-				<img src="../static/mallampatismall.png" class="img-thumbnail img-responsive" alt="Mallampati Example image">
-        			<ul>
-         				<li>Open your mouth as wide as possible</li>
-	    				<li>Stick your tongue out <strong>without saying aaah</strong></li>
-            				<li>Take a picture directed straight at the back of your throat</li>
-					<li>It should look somewhat like the example on the right (be nice to your dentist ;-)</li>
-              			</ul>
+			<h1 class="text-capitalize text-center">how to take a useful picture:</h1>
+			<div style= "padding-top: 5%">
+				<img src="../static/mallampatismall.png" class="img-thumbnail img-responsive center-block" alt="Mallampati Example image">
+				<div class="pull-right" style= "padding-top: 5%">        			
+					<ul>
+         					<li>Open your mouth as wide as possible</li>
+	    					<li>Stick your tongue out <strong>without saying 'aaah'</strong></li>
+            					<li>Take a picture directed straight at the back of your throat</li>
+						<li>It should look somewhat like the example above</li>
+              				</ul>
+				</div>
 			</div>
 		</div>
 	</div>
