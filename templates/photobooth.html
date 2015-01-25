@@ -11,8 +11,10 @@
     	<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 	<!-- Custom JavaScript
     	================================================== -->
-	<script src="../static/webcam.js"></script>
-	<script src="../static/custom.js"></script>	
+	{% if is_mobile == False %}
+		<script src="../static/webcam.js"></script>
+		<script src="../static/custom.js"></script>
+	{% endif %}	
 
 	<div class="col-xs-6">
 	{% if is_mobile == False %}
@@ -33,7 +35,7 @@
 		<div class="panel panel-default">
         		<div class="panel-heading">
 				{% if is_mobile == True %}
-              				<h3 class="panel-title">Please click the button to enter the photobooth</h3>
+              				<h3 class="panel-title">Photobooth</h3>
 				{% else %}
               				<h3 class="panel-title">Or, if you prefer, upload an image file:</h3>
 				{% endif %}
@@ -41,9 +43,14 @@
             		<div class="panel-body">
               			<form>
   					<div class="form-group">
-    						<label for="exampleInputFile">Choose your image file...</label>
-    						<input type="file" id="exampleInputFile">
-    						<p class="help-block">Accepted file formats are .jpg .png, and .gif.</p>
+						{% if is_mobile == False %}
+    							<label for="exampleInputFile">Choose your image file...</label>
+							<input type="file" id="exampleInputFile">
+    							<p class="help-block">Accepted file formats are .jpg .png, and .gif.</p>
+						{% else %}
+							<label for="exampleInputFile">Click the button to activate your camera</label>
+							<input type="file" accept="image/*;capture=camera">
+						{% endif %}
   					</div>
 			<div class="pull-right">
   				<button type="submit" class="btn btn-default">Submit</button>
