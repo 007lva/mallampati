@@ -10,7 +10,8 @@ def index():
 
 @app.route('/photobooth')
 def photobooth():
-    is_mobile = detect_platform.os_platform_not_desktop()
+    dp = detect_platform()
+    is_mobile = dp.os_platform_not_desktop()
     return render_template('photobooth.html', is_mobile = is_mobile)
 
 if __name__ == '__main__':
