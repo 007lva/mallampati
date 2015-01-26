@@ -41,8 +41,12 @@
             		<div class="panel-body">
               			<form>
   					<div class="form-group">
-						<label for="exampleInputFile">Click the button to activate your camera</label>
-						<input type="file" accept="image/*;capture=camera">
+						<div class="text-center">
+						<label class="btn btn-lg btn-success" for="my-file-selector">
+						<input id="my-file-selector" type="file" style="display:none;" accept="image/*;capture=camera">
+						OK, activate the camera!
+						</label>
+						</div>
   					</div>
 			<div class="pull-right">
   				<button type="submit" class="btn btn-success">Submit</button>
