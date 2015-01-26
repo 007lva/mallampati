@@ -12,8 +12,11 @@ def index():
 def photobooth():
     dp = detect_platform()
     is_mobile = dp.os_platform_not_desktop()
-    return render_template('photobooth.html', is_mobile = is_mobile)
+    if is_mobile == False:
+        return render_template('photobooth.html')
+    else:
+        return render_template('photobooth_mobile.html')
 
 if __name__ == '__main__':
 	app.config["SECRET_KEY"] = "RaoulKnowsNothingBetter"
-	app.run()
+	app.run(debug = True)
