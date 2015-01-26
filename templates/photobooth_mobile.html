@@ -1,0 +1,51 @@
+{% extends "index.html" %}
+    {% block content %}
+    	{% block navbar %}{{super()}}{% endblock %}
+    	<!-- Bootstrap core JavaScript
+    	================================================== -->
+    	<!-- Placed at the end of the document so the pages load faster -->
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    	<script src="../static/js/bootstrap.min.js"></script>
+    	<script src="../../assets/js/docs.min.js"></script>
+    	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    	<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+	<!-- Custom JavaScript/css
+    	================================================== -->	
+	<div class="row">
+      		<div class="lead">
+			<h2 class="text-capitalize text-center">how to take a useful picture:</h2>
+			<div class="text-center">
+				<ul>
+         				<li>Open your mouth as wide as possible</li>
+	    				<li>Stick your tongue out <strong>without saying 'aaah'</strong></li>
+            				<li>Take a picture directed straight at the back of your throat</li>
+					<li>It should look somewhat like the example below</li>
+              			</ul>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<img src="../static/mallampatismall.png" class="img-thumbnail img-responsive center-block" alt="Mallampati Example image">
+	</div>
+	<div class="row">
+		<div  style="padding-top: 5%; padding-left: 10%; padding-right: 10%">
+		<div class="panel panel-default">
+        		<div class="panel-heading">
+              			<h3 class="panel-title">Photobooth</h3>
+            		</div>
+            		<div class="panel-body">
+              			<form>
+  					<div class="form-group">
+						<label for="exampleInputFile">Click the button to activate your camera</label>
+						<input type="file" accept="image/*;capture=camera">
+  					</div>
+			<div class="pull-right">
+  				<button type="submit" class="btn btn-success">Submit</button>
+			</div>
+				</form>
+            		</div>
+        	</div>
+		</div>
+	</div>
+
+{% endblock %}
