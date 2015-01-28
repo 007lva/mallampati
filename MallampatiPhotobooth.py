@@ -12,7 +12,7 @@ def index():
 def photobooth():
     dp = detect_platform()
     is_mobile = dp.os_platform_not_desktop()
-    if is_mobile == Flase:
+    if is_mobile == False:
         return render_template('photobooth.html')
     else:
         return render_template('photobooth_mobile_footer.html')
