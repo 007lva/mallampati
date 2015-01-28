@@ -15,7 +15,7 @@ def photobooth():
     if is_mobile == False:
         return render_template('photobooth.html')
     else:
-        return render_template('photobooth_mobile.html')
+        return render_template('photobooth_mobile_footer.html')
 
 if __name__ == '__main__':
 	app.config["SECRET_KEY"] = "RaoulKnowsNothingBetter"

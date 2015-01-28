@@ -44,7 +44,8 @@ class PhotoboothpageTests(unittest.TestCase):
     def test_webcamphotobooth_if_desktop(self):
         from MallampatiPhotobooth import app
         with app.test_request_context():  # required to get context locals
-            self.is_mobile = detect_platform.os_platform_not_desktop()
+            self.dp = detect_platform()
+            self.is_mobile = self.dp.os_platform_not_desktop()
             if self.is_mobile == False:
                 self.assertTrue(self.driver.find_element_by_id("my_camera"))
 
