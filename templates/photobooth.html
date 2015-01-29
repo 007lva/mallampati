@@ -34,16 +34,18 @@
            			<h3 class="panel-title">Or, if you prefer, upload an image file:</h3>
             		</div>
             		<div class="panel-body">
-              			<form>
+              			<form action="" method=post enctype=multipart/form-data>
   					<div class="form-group">
-						<label class="btn btn-lg btn-success" for="my-file-selector">
-						<input id="my-file-selector" type="file" style="display:none;">
-						Choose an image file...
-						</label>
+						<div id="file_uploader">
+							<label class="btn btn-lg btn-success" for="my-file-selector">
+							<input id="my-file-selector" type="file" style="display:none;" name=file>
+							Choose an image file...
+							</label>
+						</div>
     						<p class="help-block">Accepted file formats are .jpg .png, and .gif.</p>
   					</div>
 			<div class="pull-right">
-  				<button type="submit" class="btn btn-success">Submit</button>
+  				<input type="submit" class="btn btn-success" value=Upload>
 			</div>
 				</form>
             		</div>
