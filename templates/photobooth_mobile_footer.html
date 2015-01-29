@@ -79,16 +79,12 @@
 
     <footer class="footer">
       <div class="container">
-        <form>
-		<div class="pull-left">
+        <form action="" method=post enctype=multipart/form-data>
+		<div class="text-center">
 			<label class="btn btn-lg btn-success" for="my-file-selector">
-			<input id="my-file-selector" type="file" style="display:none;" accept="image/*;capture=camera">
+			<input name=file id="my-file-selector" type="file" style="display:none;" accept="image/*;capture=camera" onchange="this.form.submit();">
 			OK, activate the camera!
 			</label>
-			</div>
-				<div class="pull-right">
-  				<button type="submit" class="btn btn-lg  btn-success">Submit</button>
-			</div>
 	</form>
       </div>
     </footer>
