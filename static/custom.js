@@ -17,8 +17,9 @@ $(function() {
 
 	$('#my-file-selector').change(function(){
 		var file_name = $('#my-file-selector').val();
-		$('#file_uploader').append('<span class="form-control-static">File chosen: ' + file_name + '</span>');
+		//$('#file_uploader').append('<span class="form-control-static">File chosen: ' + file_name + '</span>');
 		//$("label[for='my-file-selector']").text("Chosen: " + file_name);
+		$('#filename').text(file_name);
 	});
 
 });
