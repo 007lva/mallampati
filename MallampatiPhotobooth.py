@@ -1,7 +1,7 @@
 #==============================================================================
 # Imports
 #==============================================================================
-import os, imghdr
+import os, imghdr, base64
 from flask import Flask, render_template, request, flash,\
     redirect, url_for, send_from_directory
 from detect_platform import detect_platform
@@ -50,10 +50,22 @@ def photobooth():
 @app.route('/photobooth', methods = ['GET', 'POST'])
 def upload_file():
     """
-    Controls the form on the photobooth page, used to post images.
+    Controls the form on the photobooth page, used to post images. As there is
+    no better way for handling multiple forms in the way I need it, I rely
+    upon a try/except block
     """
     if request.method == 'POST':
-        file = request.files['file']
+        try:
+            file = request.files['file']
+        except:
+            try:
+                uri = request.form['webcam']
+                binary = base64.standard_b64decode(uri)
+                with open('./uploads/image.jpg', 'wb') as f:
+                    f.write(binary)
+                return redirect(url_for('photobooth'))  # TODO: result page
+            except KeyError:
+                return render_template('500.html'), 500
         mimetype = imghdr.what(file)  # required, since flask uses browser mime
         if file and allowed_file(file.filename)\
         and mimetype in ALLOWED_EXTENSIONS:
