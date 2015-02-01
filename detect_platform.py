@@ -8,7 +8,8 @@ Created on Sat Jan 24 22:14:43 2015
 from flask import request
 
 class detect_platform:
-#get user agent
+    MOBILE_PLATFORMS = ('android', 'ipad', 'ios')
+    #get user agent
     def os_platform_not_desktop(self):
         '''
         uses werkzeug classes to detect OS. I used that because I do not
@@ -16,12 +17,8 @@ class detect_platform:
         Use browser capability detection such as modernizer for anything else.
         '''
         self.platform = request.user_agent.platform
-        if (self.platform == 'android') or (self.platform == 'ipad') or \
-            (self.platform == 'iphone'):
-            return True
-        else:
-            return False
-            
+        return self.platform in detect_platform.MOBILE_PLATFORMS
+
     def get_os_string(self):
         try:
             self.os_string = request.user_agent.platform

@@ -42,11 +42,9 @@ def index():
 def photobooth():
     dp = detect_platform()
     is_mobile = dp.os_platform_not_desktop()
-    if is_mobile == False:
-        return render_template('photobooth.html')
-    else:
-        return render_template('photobooth_mobile_footer.html')
-        
+    view = render_template('photobooth_mobile_footer.html') if is_mobile else render_template('photobooth.html')
+    return view
+
 @app.route('/photobooth', methods = ['GET', 'POST'])
 def upload_file():
     """
@@ -87,4 +85,4 @@ def send_file(filename):
     return send_from_directory(UPLOAD_FOLDER, filename)
 
 if __name__ == '__main__':
-    app.run(debug = True)
+    app.run(host='0.0.0.0', debug = True)
